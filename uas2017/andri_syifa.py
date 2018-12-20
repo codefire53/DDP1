@@ -1,0 +1,20 @@
+from tkinter import *
+class Voting:
+	def __init__(self):
+		self.window=Tk()
+		self.window.title('E-Vote')
+		self.window.geometry('270x100')
+		self.VotesOfAndri=IntVar()
+		self.VotesOfAndri.set(0)
+		self.VotesOfSyifa=IntVar()
+		self.VotesOfSyifa.set(0)
+		self.label_andri=Label(self.window,font="Arial 18",textvariable=self.VotesOfAndri)
+		self.label_syifa=Label(self.window,font="Arial 18",textvariable=self.VotesOfSyifa)
+		self.label_andri.grid(row=0,column=0)
+		self.label_syifa.grid(row=0,column=1)
+		self.button_andri=Button(self.window,font="Arial 18",text="Vote Andri",command=lambda :self.VotesOfAndri.set(self.VotesOfAndri.get()+1))
+		self.button_syifa=Button(self.window,font="Arial 18",text="Vote Syifa",command=lambda :self.VotesOfSyifa.set(self.VotesOfSyifa.get()+1))
+		self.button_andri.grid(row=1,column=0)
+		self.button_syifa.grid(row=1,column=1)
+		self.window.mainloop()
+gui=Voting()
